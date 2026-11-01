@@ -32,6 +32,32 @@ document.querySelectorAll('input[name=preferred]').forEach(radio=>radio.addEvent
 function track(event,section=''){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event,section})}
 document.querySelectorAll('[data-event]').forEach(el=>el.addEventListener('click',()=>track(el.dataset.event,el.dataset.section||'')));
 
+// Open the illustrated gate as the visitor scrolls through its section.
+const gateStory = document.querySelector('#gate-experience');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let gateFrame = 0;
+function updateGate() {
+  gateFrame = 0;
+  if (reducedMotion.matches) {
+    gateStory.style.removeProperty('--gate-left');
+    gateStory.style.removeProperty('--gate-right');
+    return;
+  }
+  const bounds = gateStory.getBoundingClientRect();
+  const distance = Math.max(1, bounds.height - window.innerHeight);
+  const progress = Math.min(1, Math.max(0, -bounds.top / distance));
+  const shift = Math.round(progress * 101);
+  gateStory.style.setProperty('--gate-left', `-${shift}%`);
+  gateStory.style.setProperty('--gate-right', `${shift}%`);
+}
+function scheduleGate() {
+  if (!gateFrame) gateFrame = window.requestAnimationFrame(updateGate);
+}
+window.addEventListener('scroll', scheduleGate, { passive: true });
+window.addEventListener('resize', scheduleGate);
+reducedMotion.addEventListener('change', scheduleGate);
+scheduleGate();
+
 const form=document.querySelector('#estimate-form');
 form.addEventListener('submit',event=>{
   event.preventDefault();

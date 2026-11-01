@@ -130,11 +130,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .brand-logo-image {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 110px;
+  height: 130px;
   max-width: none;
   position: absolute;
-  top: -36px;
+  top: -30px;
   left: 0;
 }
 .nav {
@@ -356,9 +356,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   width: 220px;
   height: 20px;
   right: -65px;
-  top: 90px;
+  top: 117px;
   background: var(--yellow);
-  transform: rotate(-12deg);
+  transform: rotate(30deg);
 }
 .trust-strip {
   border-bottom: 1px solid var(--line);
@@ -511,6 +511,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   gap: 13px;
 }
 .service {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 260px;
@@ -518,6 +519,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   background: #fff;
   border: 1px solid var(--line);
   transition: transform .15s,box-shadow .15s;
+}
+.service-photo {
+  width: calc(100% + 50px);
+  height: 155px;
+  max-width: none;
+  margin: -25px -25px 22px;
+  object-fit: cover;
+  background: #e8edf8;
+}
+.service-photo-contain {
+  object-fit: contain;
+  padding: 15px;
+  background: #f0f3fa;
 }
 .service-num {
   display: grid;
@@ -542,6 +556,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   color: var(--blue);
   font-weight: 900;
   font-size: .76rem;
+}
+.service a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.service:focus-within {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 .feature {
   background: var(--blue-dark);
@@ -1285,4 +1308,184 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   letter-spacing: .12em;
   color: var(--blue);
   font-weight: 900;
+}
+
+/* Scroll story: two illustrated gate leaves reveal a real HTS installation. */
+.gate-story {
+  height: 190vh;
+  background: #081136;
+  color: #fff;
+  --gate-left: 0%;
+  --gate-right: 0%;
+}
+.gate-story-sticky {
+  position: sticky;
+  top: 78px;
+  height: calc(100dvh - 78px);
+  min-height: 600px;
+  display: grid;
+  grid-template-rows: auto minmax(210px, 1fr) auto;
+  gap: 20px;
+  padding: 32px 0;
+  overflow: hidden;
+}
+.gate-story-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+}
+.gate-story-heading h2 {
+  margin-bottom: 0;
+}
+.gate-story-heading > p {
+  width: min(360px, 42%);
+  margin: 0;
+  color: #d8e1f9;
+}
+.gate-scene {
+  position: relative;
+  isolation: isolate;
+  width: min(1100px, calc(100% - 40px));
+  height: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 12px solid #253255;
+  box-shadow: 0 18px 50px #01051f90, inset 0 0 0 2px #637297;
+  background: #1e2c4d;
+}
+.gate-view,
+.gate-view img,
+.gate-view-tint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.gate-view img {
+  object-fit: cover;
+  object-position: center 60%;
+}
+.gate-view-tint {
+  background: linear-gradient(90deg, #07123a70, #07123a20 55%, #07123a70);
+}
+.gate-view-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: max-content;
+  max-width: 80%;
+  padding: 12px 18px;
+  background: var(--yellow);
+  color: var(--blue-deep);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-align: center;
+}
+.gate-leaf {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg, #0b1735 0 10px, #4b5b77 10px 13px, transparent 13px 52px),
+    linear-gradient(180deg, #142340eb, #273b5aeb);
+  box-shadow: inset 0 0 0 8px #101d39, inset 0 0 0 10px #72819b;
+  will-change: transform;
+}
+.gate-leaf::before,
+.gate-leaf::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: linear-gradient(#435570, #0d1c36);
+  box-shadow: 0 2px 5px #050b20a0;
+}
+.gate-leaf::before { top: 19%; }
+.gate-leaf::after { bottom: 18%; }
+.gate-leaf-left {
+  left: 0;
+  transform: translateX(var(--gate-left));
+  border-right: 8px solid #0b1735;
+}
+.gate-leaf-right {
+  right: 0;
+  transform: translateX(var(--gate-right));
+  border-left: 8px solid #0b1735;
+}
+.gate-handle {
+  position: absolute;
+  top: 49%;
+  width: 11px;
+  height: 33px;
+  border-radius: 4px;
+  background: var(--yellow);
+  box-shadow: 0 0 0 3px #192544, 0 2px 9px #0009;
+}
+.gate-leaf-left .gate-handle { right: 16px; }
+.gate-leaf-right .gate-handle { left: 16px; }
+.gate-ground {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 13px;
+  background: #121c32;
+}
+.gate-story-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.gate-story-foot > p {
+  max-width: 330px;
+  margin: 0;
+  color: #d8e1f9;
+  font-size: .9rem;
+}
+.gate-story-foot .inline-actions { margin-top: 0; }
+.gate-story-foot .inline-actions > a:not(.button) {
+  color: #fff;
+  font-size: .83rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 800px) {
+  .gate-story { height: 160vh; }
+  .gate-story-sticky {
+    top: 65px;
+    height: calc(100dvh - 65px);
+    min-height: 0;
+    gap: 12px;
+    padding: 20px 0 75px;
+  }
+  .gate-story-heading { display: block; }
+  .gate-story-heading h2 { font-size: 2rem; }
+  .gate-story-heading > p { width: auto; margin-top: 10px; font-size: .83rem; }
+  .gate-scene { width: calc(100% - 32px); border-width: 7px; }
+  .gate-view-label { font-size: .6rem; letter-spacing: .05em; }
+  .gate-story-foot { display: block; }
+  .gate-story-foot > p { display: none; }
+  .gate-story-foot .inline-actions { gap: 8px; }
+  .gate-story-foot .button { min-height: 42px; padding: 8px 12px; }
+}
+@media (max-width: 560px) {
+  .gate-story-heading h2 { font-size: 1.75rem; }
+  .gate-story-foot .inline-actions > a:not(.button) { font-size: .76rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-story { height: auto; --gate-left: -100%; --gate-right: 100%; }
+  .gate-story-sticky { position: static; height: auto; min-height: 0; }
+  .gate-scene { height: 300px; }
+  .gate-leaf { will-change: auto; }
 }
