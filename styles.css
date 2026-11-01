@@ -1146,7 +1146,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     height: 290px;
   }
 .hero-float {
-    bottom: 0;
+    bottom: 10;
     left: 0;
   }
 .hero-stripe {
