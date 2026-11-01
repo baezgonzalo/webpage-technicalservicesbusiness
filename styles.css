@@ -1246,6 +1246,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     gap: 7px;
     padding: 10px;
   }
+  .image-label {
+    bottom: 76px;
+  }
 .float-number {
     font-size: 1.6rem;
   }
