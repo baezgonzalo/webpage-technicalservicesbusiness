@@ -1141,6 +1141,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     height: 290px;
   }
 .hero-float {
+    bottom: 0;
     left: 0;
   }
 .hero-stripe {
@@ -1239,8 +1240,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .hero-image {
     height: 255px;
   }
+  .hero-float {
+    width: 160px;
+    height: 64px;
+    gap: 7px;
+    padding: 10px;
+  }
 .float-number {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 .section-heading {
     display: block;
