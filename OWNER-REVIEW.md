@@ -26,7 +26,7 @@ This folder contains a responsive homepage and 18 internal pages. Service, monit
 
 ## Material needed from HTS
 
-- Current Google rating and review count; three real customer reviews with names, dates and approved text.
+- Three real customer reviews with names, dates and approved text. The homepage now shows the supplied Google rating (5.0/5 from 41 reviews); verify it again before delivery if the count changes.
 - Three documented projects: approved photos, city, installed system and a factual problem, solution and result for each.
 - An approved portrait of founder and president Joseph Helou.
 - An approved high-resolution social sharing image with a real HTS photo and logo.

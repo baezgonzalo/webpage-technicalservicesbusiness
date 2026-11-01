@@ -707,10 +707,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .review-summary {
   display: inline-block;
   background: #f7f9fd;
-  border: 1px dashed #aebbd0;
+  border: 1px solid #aebbd0;
   padding: 10px 15px;
-  color: #67738f;
-  font-size: .8rem;
+  color: var(--blue-dark);
+  font-size: 1rem;
+}
+.review-stars {
+  color: #a56400;
+  letter-spacing: .08em;
+  white-space: nowrap;
 }
 .reviews-grid,.projects-grid {
   display: grid;

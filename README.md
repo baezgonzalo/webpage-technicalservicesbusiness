@@ -9,7 +9,7 @@ The gate scene between Who We Serve and Services opens as visitors scroll. It us
 ## Before launch
 
 - Connect the estimate form to a secure backend, deliver requests to `info@heloutechnicalservices.com` and also `dir@heloutechnicalservices.com` for government/school requests, store them in a CRM or database, add spam protection, and create a real `/thank-you` page. The current form validates fields and prepares an email in the visitor's mail app; it does not silently claim delivery.
-- Replace the Google rating and review count with verified current data. Insert only real, approved reviews.
+- The homepage shows the supplied Google rating (5.0/5 from 41 reviews). Recheck the count before delivery, and insert only real, approved review text.
 - Add three real project photos and descriptions, plus an approved portrait of Joseph Helou.
 - Confirm business hours, estimate response time, installation lead time, repair call fee, monitoring terms, insurance details, trailer sales/rental options, SMS consent wording, contract status, and permission for third-party logos.
 - Supply a high-resolution Open Graph image and Google Tag Manager/Search Console IDs.
