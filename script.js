@@ -28,7 +28,6 @@ const serviceWrap=document.querySelector('#service-chips');
 serviceWrap.replaceChildren(...services.map(name=>{const button=document.createElement('button');button.type='button';button.className='form-chip';button.dataset.service=name;button.textContent=name;button.setAttribute('aria-pressed','false');button.addEventListener('click',()=>{const next=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(next));document.querySelector('#service-error').textContent=''});return button}));
 document.querySelectorAll('a[data-type],a[data-service]').forEach(link=>link.addEventListener('click',()=>{if(link.dataset.type)document.querySelector('#customer-type').value=link.dataset.type;if(link.dataset.service){const chip=[...serviceWrap.children].find(item=>item.dataset.service===link.dataset.service);if(chip)chip.setAttribute('aria-pressed','true')}}));
 
-document.querySelectorAll('input[name=preferred]').forEach(radio=>radio.addEventListener('change',()=>{document.querySelector('#text-consent').hidden=document.querySelector('input[name=preferred]:checked').value!=='Text'}));
 function track(event,section=''){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event,section})}
 document.querySelectorAll('[data-event]').forEach(el=>el.addEventListener('click',()=>track(el.dataset.event,el.dataset.section||'')));
 
@@ -69,7 +68,6 @@ form.addEventListener('submit',event=>{
   const chosen=[...serviceWrap.querySelectorAll('[aria-pressed=true]')].map(chip=>chip.dataset.service);
   if(chosen.length===0){document.querySelector('#service-error').textContent='Please choose at least one service.';invalid=true}
   const preferred=form.querySelector('input[name=preferred]:checked').value;
-  if(preferred==='Text'&&!form.elements.consent.checked){status.textContent='Please accept text contact or choose call or email.';invalid=true}
   if(invalid){if(!status.textContent)status.textContent='Please complete the required fields with valid contact information.';(form.querySelector('[aria-invalid=true]')||serviceWrap).focus();return}
   const name=form.elements.fullName.value.trim();
   const type=form.elements.customerType.value;

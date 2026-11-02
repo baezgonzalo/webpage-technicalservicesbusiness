@@ -4,7 +4,7 @@ This folder contains a responsive homepage and 18 internal pages. Service, monit
 
 ## Review the proposal
 
-1. Open `index.html` in a browser, or use the preview at `http://127.0.0.1:8766/` while the local preview server is running.
+1. Open `index.html` in a browser, or review the published demo at https://baezgonzalo.github.io/webpage-technicalservicesbusiness/.
 2. Try the service cards, header menus, footer links, phone buttons and estimate form.
 3. Review the visual assets listed in `PHOTO-SOURCES.md` and approve their use. Some images on the current HTS website may belong to a manufacturer or photographer.
 4. Send corrections and the missing details below. No unverified review, project result, price, response time or contract date has been invented.
@@ -27,7 +27,7 @@ This folder contains a responsive homepage and 18 internal pages. Service, monit
 ## Material needed from HTS
 
 - Three real customer reviews with names, dates and approved text. The homepage now shows the supplied Google rating (5.0/5 from 41 reviews); verify it again before delivery if the count changes.
-- Three documented projects: approved photos, city, installed system and a factual problem, solution and result for each.
+- Documented case studies, if desired: approved photos, city, installed system and a factual problem, solution and result for each. The current gallery shows equipment photos without those claims.
 - An approved portrait of founder and president Joseph Helou.
 - An approved high-resolution social sharing image with a real HTS photo and logo.
 - Google Tag Manager ID and Search Console verification, if those services will be used.
@@ -36,4 +36,4 @@ This folder contains a responsive homepage and 18 internal pages. Service, monit
 
 The estimate form validates the visible fields and prepares a completed email in the visitor's mail app. It does not send data automatically. Before using the site to collect real leads, connect a secure form backend with email delivery to `info@heloutechnicalservices.com`, also notify `dir@heloutechnicalservices.com` for government or school requests, store submissions, add spam protection, and configure a thank-you page. Review the privacy and SMS wording against that actual setup.
 
-This proposal has not been published to the company's domain or uploaded to the GitHub repository. When the owner approves it, upload the full folder structure so all internal links and images remain available.
+This proposal is hosted on GitHub Pages for review. It has not replaced the company's domain. Before an official launch, confirm the facts and photo rights above, connect the form backend, and upload the full folder structure to the approved hosting service.
